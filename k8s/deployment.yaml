@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-service1
+  labels:
+    app: helloworld-service1-selector
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld-service1-selector
+  template:
+    metadata:
+      labels:
+        app: "helloworld-service1-selector"
+    spec:
+      containers:
+      - name: helloworld-service1
+        image: dhiguerosr/kubernetes-demo:1.0.0
+        ports:
+        - containerPort: 3000
+      #imagePullSecrets:
+      #- name: "registry-docker-cred"
