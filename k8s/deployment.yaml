@@ -5,7 +5,7 @@ metadata:
   labels:
     app: helloworld-service1-selector
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: helloworld-service1-selector
@@ -16,8 +16,6 @@ spec:
     spec:
       containers:
       - name: helloworld-service1
-        image: dhiguerosr/kubernetes-demo:1.0.0
+        image: dhiguerosr/kubernetes-demo:2.0.0
         ports:
         - containerPort: 3000
-      #imagePullSecrets:
-      #- name: "registry-docker-cred"

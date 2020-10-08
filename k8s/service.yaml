@@ -5,7 +5,7 @@ metadata:
   labels:
     app: helloworld-service1-selector
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: http  
     port: 3000
